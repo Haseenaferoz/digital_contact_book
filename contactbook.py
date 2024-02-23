@@ -90,9 +90,9 @@ def to_remove():
         messagebox.showerror('Error','select one of  them table ')
 
 def to_search():
-    telephone=searchtext.get()
+    name=searchtext.get()
 
-    data =search(telephone)
+    data =search(name)
 
     def delete_command():
         tree.delete(*tree.get_children())
