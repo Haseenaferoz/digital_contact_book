@@ -43,29 +43,29 @@ def update(i):
     with open("cdata.csv", "r") as file:
         reader = csv.reader(file)
         for row in reader:
-            new_list.append(row)
-            for element in row:
-             if element == telephone:
+           
+             if row[2]== telephone:
                  name=i[1]
                  gender=i[2]
                  telephone=i[3]
                  email=i[4]
 
                  data=[name,gender,telephone,email]
-                 index=new_list.index(row)
-                 new_list[index]=data
+                 new_list.append(data)
+             else:
+                     newlist.append(row)
 
     update_newlist(new_list)
 
 
-def search(i):
+def search(text):
     data=[]
-    telephone=i
+    
     with open('cdata.csv','r',newline='') as file:
         reader=csv.reader(file)
         for row in reader:
             for element in row:
-                if element==telephone:
+                if text.lower() in element.lower():
                     data.append(row)
 
     return data
